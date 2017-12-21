@@ -31,7 +31,7 @@ def won?(board)
     end
     count+=1
   end
-  won = WIN_COMBINATIONS.any? do |combination|
+  won = WIN_COMBINATIONS.detect do |combination|
     combination == x_array || combination == o_array
   end
   return won
