@@ -38,7 +38,12 @@ def won?(board)
 end
 
 def full?(board)
-  return board.all? do |position|
-    position_taken?(board,position.to_i)
+  counter = 0
+  while counter<board.length
+    if !position_taken?(board,counter)
+      return false
+    end
+    counter+=1
   end
+  return true
 end
