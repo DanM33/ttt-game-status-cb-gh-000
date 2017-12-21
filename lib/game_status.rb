@@ -50,5 +50,5 @@ def full?(board)
 end
 
 def draw?(board)
-  return full?(board) && won?(board) == [-1,-1,-1]
+  return full?(board) && !won?(board)
 end
