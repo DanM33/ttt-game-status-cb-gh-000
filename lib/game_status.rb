@@ -52,7 +52,7 @@ def winner(board)
     end
     counter+=1
   end
-  if turn_count==0
+  if turn_count%2==0
     return "X"
   end
   return "O"
