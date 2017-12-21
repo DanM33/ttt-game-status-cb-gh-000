@@ -36,3 +36,9 @@ def won?(board)
   end
   return won
 end
+
+def full?(board)
+  return board.all? do |position|
+    position_taken?(board,position)
+  end
+end
