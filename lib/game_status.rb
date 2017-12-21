@@ -16,24 +16,8 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  count = 0
-  x_count = 0
-  o_count = 0
-  x_array = [-1,-1,-1]
-  o_array = [-1,-1,-1]
-  board.each do |position|
-    if position == "X"
-      x_array[x_count]=count
-      x_count+=1
-    elsif position == "O"
-      o_array[o_count]=count
-      o_count+=1
-    end
-    count+=1
-  end
-  won = [-1,-1,-1]
   won = WIN_COMBINATIONS.detect do |combination|
-    combination == x_array || combination == o_array
+    board[combination[0]] == board[combination[1]] && board[combination[1]] == board[combination[2]]
   end
   return won
 end
