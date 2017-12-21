@@ -44,7 +44,7 @@ end
 def winner(board)
   counter = 0
   if !won?(board)
-    return false
+    return nil
   end
   while counter<board.length
     if position_taken?(board,counter)
