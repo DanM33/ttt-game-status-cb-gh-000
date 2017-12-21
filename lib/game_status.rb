@@ -43,8 +43,17 @@ end
 
 def winner(board)
   counter = 0
+  turn_count=0
+
   if !won?(board)
     return nil
+  end
+
+  while counter < board.length
+    if position_taken?(board,counter)
+      turn_count+=1
+    end
+    counter+=1
   end
 
 
