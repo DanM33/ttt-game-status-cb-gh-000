@@ -31,6 +31,7 @@ def won?(board)
     end
     count+=1
   end
+  won = [-1,-1,-1]
   won = WIN_COMBINATIONS.detect do |combination|
     combination == x_array || combination == o_array
   end
@@ -46,4 +47,8 @@ def full?(board)
     counter+=1
   end
   return true
+end
+
+def draw?(board)
+  return full?(board) && won?(board) == [-1,-1,-1]
 end
